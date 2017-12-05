@@ -253,34 +253,36 @@ function animate() {
 function render() {
   var t = clock.getElapsedTime();
 
-  suomiTextMesh.visible = false;
-  nitorTextMesh.visible = false;
-  if (count % 2 === 0) {
-    metalMaterial.envMap = cubeCamera1.renderTarget.texture;
-    metalMaterial.envMap.mapping = THREE.CubeRefractionMapping;
-    cubeCamera2.position = suomiTextMesh.position;
-    cubeCamera2.update(renderer, scene);
-  } else {
-    metalMaterial.envMap = cubeCamera2.renderTarget.texture;
-    metalMaterial.envMap.mapping = THREE.CubeRefractionMapping;
-    cubeCamera1.position = suomiTextMesh.position;
-    cubeCamera1.update(renderer, scene);
-  }
-
-  var length = 1000;
-  var speed = 1000 / length;
   if (suomiTextMesh && nitorTextMesh) {
-    if (count % length < 0.5 * length) {
-      shaderMaterial.uniforms.texture.value = suomiTexture;
-      suomiTextMesh.visible = true;
-      nitorTextMesh.visible = false;
-      //suomiTextMesh.rotation.x = 10.0 * (count % length) / length * Math.PI * 2;
-      //suomiTextMesh.position.z = -speed * (count % length) - suomiTextMesh.startPosition - 50;
+    suomiTextMesh.visible = false;
+    nitorTextMesh.visible = false;
+    if (count % 2 === 0) {
+      metalMaterial.envMap = cubeCamera1.renderTarget.texture;
+      metalMaterial.envMap.mapping = THREE.CubeRefractionMapping;
+      cubeCamera2.position = suomiTextMesh.position;
+      cubeCamera2.update(renderer, scene);
     } else {
-      shaderMaterial.uniforms.texture.value = nitorTexture;
-      nitorTextMesh.visible = true;
-      suomiTextMesh.visible = false;
-      //nitorTextMesh.position.z = -speed * ((count - 0.5 * length) % length) - nitorTextMesh.startPosition - 50;
+      metalMaterial.envMap = cubeCamera2.renderTarget.texture;
+      metalMaterial.envMap.mapping = THREE.CubeRefractionMapping;
+      cubeCamera1.position = suomiTextMesh.position;
+      cubeCamera1.update(renderer, scene);
+    }
+
+    var length = 1000;
+    var speed = 1000 / length;
+    if (suomiTextMesh && nitorTextMesh) {
+      if (count % length < 0.5 * length) {
+        shaderMaterial.uniforms.texture.value = suomiTexture;
+        suomiTextMesh.visible = true;
+        nitorTextMesh.visible = false;
+        //suomiTextMesh.rotation.x = 10.0 * (count % length) / length * Math.PI * 2;
+        //suomiTextMesh.position.z = -speed * (count % length) - suomiTextMesh.startPosition - 50;
+      } else {
+        shaderMaterial.uniforms.texture.value = nitorTexture;
+        nitorTextMesh.visible = true;
+        suomiTextMesh.visible = false;
+        //nitorTextMesh.position.z = -speed * ((count - 0.5 * length) % length) - nitorTextMesh.startPosition - 50;
+      }
     }
   }
 
