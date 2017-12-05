@@ -296,7 +296,7 @@ function render() {
   shaderMaterial.uniforms.uConstant.value = 1.0;
   shaderMaterial.uniforms.uZoom.value = 1.0;
   shaderMaterial.uniforms.uScaler.value = scaler;
-  shaderMaterial.uniforms.uTime.value = t;
+  shaderMaterial.uniforms.uTime.value = -t;
 
   renderer.render(scene, camera);
 }
