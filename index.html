@@ -87,9 +87,7 @@
       float displace(vec3 pos) {
       float sx = 10.7 * (pos.x / 1800.0);
       float sy = 4.17 * (pos.y / 1100.0);
-      return cos(sx + sy + 2.3 * uTime) * 23.0
-      + cos(sx + sy + 13.432 + 1.7 * uTime) * 13.0;
-      + cos(sx + sy + 131.124 + 0.37 * uTime) * 8.0;
+      return sin((sx + sy) * 0.7 + uTime) * 48.0;
       }
 
       void main() {

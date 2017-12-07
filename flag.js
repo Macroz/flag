@@ -232,6 +232,12 @@ function animate() {
 
   var t = clock.getElapsedTime();
 
+  if (t > 86400) {
+    // reset clock once a day so values don't grow too large
+    clock.stop();
+    clock.start();
+  }
+
   var a = 0;//2 * mouseX / windowHalfX;
   var b = 0;//2 * mouseY / windowHalfY;
   var x = 0.0;
@@ -296,7 +302,7 @@ function render() {
   shaderMaterial.uniforms.uConstant.value = 1.0;
   shaderMaterial.uniforms.uZoom.value = 1.0;
   shaderMaterial.uniforms.uScaler.value = scaler;
-  shaderMaterial.uniforms.uTime.value = -t;
+  shaderMaterial.uniforms.uTime.value = -(t % (Math.PI * 2.0));
 
   renderer.render(scene, camera);
 }
