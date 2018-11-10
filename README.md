@@ -1,6 +1,6 @@
-# Demoscene - Three.js - Mandelbrot
+# Demoscene - Three.js - Flag
 
-[Live Demo](http://macroz.github.io/flat/)
+[Live Demo](http://macroz.github.io/flag/)
 
 ![Flat](flag.png?raw=true)
 
