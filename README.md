@@ -1,8 +1,8 @@
 # Demoscene - Three.js - Mandelbrot
 
-[Live Demo](http://macroz.github.io/mandelbrot/)
+[Live Demo](http://macroz.github.io/flat/)
 
-![Mandelbrot](mandelbrot.png?raw=true)
+![Flat](flag.png?raw=true)
 
 ## License
 
