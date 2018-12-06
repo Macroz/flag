@@ -6,6 +6,6 @@
 
 ## License
 
-Copyright © 2017 Markku Rontu
+Copyright © 2017-2018 Markku Rontu
 
 Distributed under the Eclipse Public License.
