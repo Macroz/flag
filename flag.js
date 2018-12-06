@@ -84,7 +84,7 @@ function init() {
 
   var loader = new THREE.FontLoader();
   loader.load('IndustryInc.json', function (font) {
-    nitorTextGeo = new THREE.TextBufferGeometry('Nitor sqrt(100)', {
+    nitorTextGeo = new THREE.TextBufferGeometry('Nitor sqrt(121)', {
       font: font,
       size: 30,
       height: 2,
@@ -108,7 +108,7 @@ function init() {
     nitorTextMesh.rotation.y = Math.PI;
     scene.add(nitorTextMesh);
 
-    suomiTextGeo = new THREE.TextBufferGeometry('Suomi 100', {
+    suomiTextGeo = new THREE.TextBufferGeometry('Suomi 101', {
       font: font,
       size: 30,
       height: 2,
